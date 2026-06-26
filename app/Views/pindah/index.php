@@ -92,9 +92,10 @@
 <td class="text-center"><?= $no++ ?></td>
 
 <td>
-    <?= !empty($row['tanggal_pengajuan']) 
-        ? date('d-m-Y H:i', strtotime($row['tanggal_pengajuan'])) 
-        : '-' ?>
+    <?php
+        $waktuTampil = $row['updated_at'] ?? $row['tanggal_pengajuan'] ?? null;
+        echo $waktuTampil ? date('d-m-Y H:i', strtotime($waktuTampil)) : '-';
+    ?>
 </td>
 
 <?php if(session()->get('role') == 'desa'): ?>

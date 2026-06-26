@@ -6,10 +6,16 @@ use CodeIgniter\Model;
 
 class PengajuanPindahModel extends Model
 {
-    protected $table = 'pengajuan_pindah';
+    protected $table      = 'pengajuan_pindah';
     protected $primaryKey = 'id_pengajuan';
+    protected $returnType = 'array';
+
+    protected $useTimestamps = true;
+    protected $createdField  = 'tanggal_pengajuan';
+    protected $updatedField  = 'updated_at';
 
     protected $allowedFields = [
+        'id_user',
         'nama_pemohon',
         'jenis_pindah',
         'kategori_pindah',
@@ -24,6 +30,7 @@ class PengajuanPindahModel extends Model
         'kode_desa',
         'notif_read',
         'catatan_penolakan',
-        'catatan_pengembalian'
+        'catatan_pengembalian',
+        'updated_at'
     ];
 }

@@ -28,7 +28,8 @@ class PengajuanAktaCeraiModel extends Model
         'tanggal_proses',
         'tanggal_selesai',
         'catatan_pengembalian',
-        'catatan_penolakan'
+        'catatan_penolakan',
+        'updated_at'
     ];
 
     protected $useTimestamps = true;

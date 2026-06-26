@@ -8,7 +8,6 @@ class PengajuanAktaNikahModel extends Model
 {
     protected $table = 'pengajuan_akta_nikah';
     protected $primaryKey = 'id_permohonan';
-    
 
     protected $allowedFields = [
         'id_user',
@@ -27,6 +26,10 @@ class PengajuanAktaNikahModel extends Model
         'kode_desa',
         'hasil_layanan',
         'catatan_pengembalian',
-        'catatan_penolakan'
+        'catatan_penolakan',
+        'updated_at'
     ];
+
+    protected $useTimestamps = true;
+    protected $updatedField  = 'updated_at';
 }

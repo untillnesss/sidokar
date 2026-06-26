@@ -20,4 +20,7 @@ class PengajuanKiaModel extends Model
         'catatan_pengembalian',
         'catatan_penolakan'
     ];
+
+    protected $useTimestamps = true;
+    protected $updatedField  = 'updated_at';
 }

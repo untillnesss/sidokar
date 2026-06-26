@@ -64,17 +64,17 @@ class Kia extends BaseController
     }
 
     $data['kia'] = $builder
-        ->orderBy("
-            CASE 
-                WHEN pengajuan_kia.status = 'Pengajuan' THEN 1
-                WHEN pengajuan_kia.status = 'Proses' THEN 2
-                WHEN pengajuan_kia.status = 'Revisi' THEN 3
-                WHEN pengajuan_kia.status = 'Selesai' THEN 4
-                WHEN pengajuan_kia.status = 'Pengembalian' THEN 5
-            END
-        ", "ASC")
-        ->orderBy('pengajuan_kia.tanggal_pengajuan', 'DESC')
-        ->findAll();
+    ->orderBy("
+    CASE
+        WHEN pengajuan_kia.status = 'Pengajuan' THEN 1
+        WHEN pengajuan_kia.status = 'Proses' THEN 2
+        WHEN pengajuan_kia.status = 'Revisi' THEN 3
+        WHEN pengajuan_kia.status = 'Pengembalian' THEN 4
+        WHEN pengajuan_kia.status = 'Selesai' THEN 5
+    END
+", "ASC")
+->orderBy('pengajuan_kia.tanggal_pengajuan', 'DESC')
+->findAll();
 
     // 🔥 kirim data dropdown
     $data['desa'] = $this->desa->findAll();

@@ -215,14 +215,15 @@ class Pindah extends BaseController
         $jenisPindah = $this->request->getPost('jenis_pindah');
 
         $data = [
-            'nama_pemohon'    => $namaPemohon,
-            'jenis_pindah'    => $jenisPindah,
-            'kategori_pindah' => $this->request->getPost('kategori_pindah'),
-            'jenis_tujuan'    => $this->request->getPost('jenis_tujuan'),
-            'alamat_asal'     => $this->request->getPost('alamat_asal'),
-            'alamat_tujuan'   => $this->request->getPost('alamat_tujuan'),
-            'alasan'          => $this->request->getPost('alasan'),
-            'status'          => 'Pengajuan'
+            'nama_pemohon'       => $namaPemohon,
+            'jenis_pindah'       => $jenisPindah,
+            'kategori_pindah'    => $this->request->getPost('kategori_pindah'),
+            'jenis_tujuan'       => $this->request->getPost('jenis_tujuan'),
+            'alamat_asal'        => $this->request->getPost('alamat_asal'),
+            'alamat_tujuan'      => $this->request->getPost('alamat_tujuan'),
+            'alasan'             => $this->request->getPost('alasan'),
+            'status'             => 'Pengajuan',
+            'tanggal_pengajuan'  => date('Y-m-d H:i:s')
         ];
 
         // ⬇️ hanya isi kalau ada
@@ -577,8 +578,9 @@ public function delete($id)
     $status = $this->request->getPost('status');
 
     $data = [
-        'status' => $status
-    ];
+    'status'     => $status,
+    'updated_at' => date('Y-m-d H:i:s')
+];
 
     // =========================
     // REVISI

@@ -95,9 +95,9 @@
 <td class="text-center"><?= $no++ ?></td>
 
 <td>
-    <?= !empty($row['tanggal_pengajuan']) 
-        ? date('d-m-Y H:i', strtotime($row['tanggal_pengajuan'])) 
-        : '-' ?>
+<?= !empty($row['updated_at'])
+    ? date('d-m-Y H:i', strtotime($row['updated_at']))
+    : date('d-m-Y H:i', strtotime($row['tanggal_pengajuan'])) ?>
 </td>
 
 <?php if(session()->get('role') == 'desa'): ?>
